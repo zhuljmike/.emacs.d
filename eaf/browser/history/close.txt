@@ -1,0 +1,6 @@
+http://www.bing.com/
+http://www.baidu.vom/
+http://www.google.com/search?ie=utf-8&oe=utf-8&q=init.el
+http://www.baidu.com/
+http://www.baidu.com/
+http://www.baidu.vom/
