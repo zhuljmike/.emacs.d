@@ -1,1 +1,20 @@
+#+STARTUP: showall hidestars
 * learn emacs from Mike Zamasky
+** lesson 1
+*** part 1 
+introducing the seires and setting up the package manager
+- show melpa
+- set up melpa
+*** part 2
+install some packages
+- use-package
+- try, and 2048-game
+- which-key to give a hint, don't need to remember keyboard shortcut
+
+** lesson 2
+show some org-mode
+- review init.el
+- set up README.org
+- org-bullet, having a nice title in org-mode
+
+
