@@ -16,5 +16,14 @@ show some org-mode
 - review init.el
 - set up README.org
 - org-bullet, having a nice title in org-mode
+** lesson 3
+elisp
+** lesson 4
+buffers use ibuffer as default
+** lesson 5
+window move, use shift+arrows to move window
+frames ,C-x 5 to create new frame
 
+** lesson 6
+swiper pacakge to subtitute default search
 
