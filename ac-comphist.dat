@@ -1,1 +1,22 @@
-(nil)
+((("nil" .
+   [1 0 0])
+  ("package-enable-at-startup" .
+   [0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("max-specpdl-size" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0])
+  ("max-lisp-eval-depth" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("expand-file-name" .
+   [0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0])
+  ("org-babel-load-file" .
+   [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0])
+  (":" .
+   [1])
+  ("scroll-bar-mode" .
+   [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0])
+  ("setq" .
+   [3 0 0 0])
+  ("ring-bell-function" .
+   [0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0])
+  ("ignore" .
+   [1 0 0 0 0 0])))

@@ -1,4 +1,7 @@
 www.google.comᛝhttp://www.google.com/search?q=init.elᛡ1.5
 www.baidu.vomᛝhttp://www.baidu.vom/ᛡ1.5
 www.baidu.comᛝhttp://www.baidu.com/ᛡ1.5
+微软 Bing 搜索 - 国内版ᛝhttp://cn.bing.com/ᛡ1.5
+emacs org 中文乱码 - 国内版 Bingᛝhttp://cn.bing.com/search?q=emacs+org+%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81&qs=n&form=QBLH&sp=-1&pq=emacs+org+%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81&sc=0-14&sk=&cvid=2E7B25857F434F86A287D53D63FB7B67ᛡ1.5
+emacs 中文显示 乱码??_fareast_mzh的博客-CSDN博客_emacs 乱码ᛝhttps://blog.csdn.net/fareast_mzh/article/details/88396253ᛡ1.5
 www.bing.comᛝhttp://www.bing.com/ᛡ1.0
