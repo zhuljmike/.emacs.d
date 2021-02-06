@@ -1,6 +1,0 @@
-ls
-cd .emacs.d/
-ls
-ls -la
-ls
-emacs lazycat-emacs/site-lisp/config/init.el
