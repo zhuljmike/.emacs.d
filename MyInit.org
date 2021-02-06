@@ -7,6 +7,7 @@
   (scroll-bar-mode -1)
   (setq ring-bell-function 'ignore)
   (fset 'yes-or-no-p 'y-or-n-p)
+  (load-theme 'tango-dark)
 #+end_src
 
 #+RESULTS:
@@ -61,6 +62,7 @@
       )
 
     (use-package counsel
+      :ensure t
       :after (ivy)
       :bind (("M-x" . counsel-M-x)
 		 ("C-h b" . counsel-descbinds)
@@ -267,6 +269,7 @@
        '("<escape>" . meow-last-buffer)))
 
     (use-package meow
+      :ensure t
       :init
       (meow-global-mode 1)
       :config
@@ -284,13 +287,11 @@
 
 * quelpa,包管理器
   #+begin_src emacs-lisp
-    (require 'quelpa)
-  #+end_src
+    ;; (require 'quelpa)
+#+end_src
 
 * ctable,用于eaf安装
   #+begin_src emacs-lisp
-    (add-to-list 'load-path "~/.emacs.d/site-lisp/ctable/")
-    (require 'ctable)
   #+end_src
 * EAF(emacs-application-framework)
   #+begin_src emacs-lisp
