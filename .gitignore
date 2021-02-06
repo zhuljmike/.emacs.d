@@ -8,8 +8,10 @@ site-lisp/
 site-lisp/emacs-application-framework/
 # compiled
 *.elc
-
+MyInit.el
 # Backup files
+init.el~
+myinit.bak.org
 *~
 *.bak
 /#*/#
