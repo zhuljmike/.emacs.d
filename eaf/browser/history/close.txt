@@ -4,3 +4,5 @@ http://www.google.com/search?ie=utf-8&oe=utf-8&q=init.el
 http://www.baidu.com/
 http://www.baidu.com/
 http://www.baidu.vom/
+https://blog.csdn.net/fareast_mzh/article/details/88396253
+http://cn.bing.com/search?q=emacs+org+中文乱码&qs=n&form=QBLH&sp=-1&pq=emacs+org+中文乱码&sc=0-14&sk=&cvid=2E7B25857F434F86A287D53D63FB7B67
