@@ -1,21 +1,32 @@
 #+STARTUP: overview
+#+STARTUP: indent
 * interface tweaks
 #+begin_src emacs-lisp
   (setq ring-bell-function 'ignore)
   (setq inhibit-startup-message t)
   (tool-bar-mode -1)
   (scroll-bar-mode -1)
-  (setq ring-bell-function 'ignore)
+  (global-linum-mode 1)
   (fset 'yes-or-no-p 'y-or-n-p)
+  ;; 加载主题
   (load-theme 'tango-dark)
 #+end_src
 
-#+RESULTS:
-: y-or-n-p
-
-优化emacs常用操作
+自动保存参数
 #+begin_src emacs-lisp
-
+  (setq-default auto-save-timeout 15)
+  (setq-default auto-save-interval 100)
+#+end_src
+备份文件
+#+begin_src emacs-lisp
+  (setq
+   backup-by-copying t
+   backup-directory-alist
+   '(("."  .  "~/.emacs.d/backup"))
+   delete-old-versions t
+   kept-new-versions 3
+   kept-old-versions 1
+   version-control t)
 #+end_src
 * try
   #+begin_src emacs-lisp
@@ -54,13 +65,6 @@
 	    enable-recursive-minibuffers t
 	    ivy-re-builders-alist '((t . ivy--regex-ignore-order))))
 
-    (use-package ivy-rich
-      :ensure t
-      :config
-      (ivy-rich-mode 1)
-      ;;(setcdr (assq t ivy-format-function-alist) #'ivy-format-function-line)
-      )
-
     (use-package counsel
       :ensure t
       :after (ivy)
@@ -78,6 +82,13 @@
 	     ("C-r" . swiper-isearch-backward))
       :config (setq swiper-action-recenter t
 		    swiper-include-line-number-in-search t))
+
+    (use-package ivy-rich
+      :ensure t
+      :config
+      (ivy-rich-mode 1)
+    ;;(setcdr (assq t ivy-format-function-alist) #'ivy-format-function-line)
+    )
 
 
 
@@ -275,7 +286,8 @@
       :config
       ;; 在Normal模式下使用相对行号
       (meow-setup-line-number)
-      (meow-setup))
+      (meow-setup)
+      )
   #+end_src
 * valign实现org表格对齐
   #+begin_src emacs-lisp
@@ -285,28 +297,63 @@
       (add-hook 'org-mode-hook #'valign-mode))
   #+end_src
 
-* quelpa,包管理器
-  #+begin_src emacs-lisp
-    ;; (require 'quelpa)
-#+end_src
-
 * ctable,用于eaf安装
   #+begin_src emacs-lisp
   #+end_src
 * EAF(emacs-application-framework)
   #+begin_src emacs-lisp
-    ;; (use-package eaf
-    ;;   :load-path "~/.emacs.d/site-lisp/emacs-application-framework"
-    ;;   :init
-    ;;   (use-package epc :defer t)
-    ;;   (use-package ctable :defer t)
-    ;;   (use-package deferred :defer t)
-    ;;   :custom
-    ;;   (eaf-browser-continue-where-left-off t)
-    ;;   :config
-    ;;   (eaf-setq eaf-browser-enable-abblocker "true")
-    ;;   (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
-    ;;   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
-    ;;   (eaf-bind-key take_photo "p" eaf-camera-keybinding)
-    ;;   (eaf-bind-key nil "M-q" eaf-browser-keybinding))
+    (use-package eaf
+      :load-path "/urs/share/emacs/site-lisp/eaf"
+      :init
+      (use-package epc :defer t :ensure t)
+      (use-package ctable :defer t :ensure t)
+      (use-package deferred :defer t :ensure t)
+      (use-package s :defer t :ensure t)
+      :custom
+      (eaf-browser-continue-where-left-off t)
+      :config
+      (eaf-setq eaf-browser-enable-abblocker "true")
+      (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
+      (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
+      (eaf-bind-key take_photo "p" eaf-camera-keybinding)
+      (eaf-bind-key nil "M-q" eaf-browser-keybinding)
+      ;; 代理访问互联网
+      (setq eaf-proxy-type "http")
+      (setq eaf-proxy-host "127.0.0.1")
+      (setq eaf-proxy-port "1080")
+      )
+  
   #+end_src
+* latex配置
+#+begin_src emacs-lisp
+  (load "auctex.el" nil t t)
+  (load "preview.el" nil t t)
+
+  (setq Tex-auto-save t)
+  (setq Tex-parse-self t)
+  (setq-default Tex-master nil)
+
+  (add-hook 'LaTeX-mode-hook
+            (lambda()
+              ;; 在latex模式下，不打开自动折行
+              (turn-off-auto-fill) 
+              ;; 显示行数
+              (linum-mode 1)
+              ;; 开启自动补全
+              (global-company-mode 1)
+              ;; 打开outline mode
+              (outline-minor-mode 1)
+              ;; 编译时不显示编译信息
+              (setq TeX-show-compilation t)
+              (setq TeX-clean-confirm nil)
+              (setq TeX-save-query nil)
+              ;; 设定pdfviewer为evince
+              (setq TeX-view-program-list '(("Evince" "evince %o")))
+              (setq TeX-view-program-selection '((output-pdf "Evince")))
+              ;; 设置编译引擎为xetex,中文支持更好
+              (setq TeX-global-PDF-mode t TeX-engine 'xetex)
+              ;; 使用xelatex作为默认程序来编译latex
+              (add-to-list 'TeX-command-list '("XeLaTex" "%'xelatex%(mode)%' %t" Tex-run-Tex nil t))
+              (setq TeX-command-default "XelaTex")
+              ))
+#+end_src
