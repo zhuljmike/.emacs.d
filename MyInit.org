@@ -357,3 +357,8 @@
               (setq TeX-command-default "XelaTex")
               ))
 #+end_src
+* magit
+#+begin_src emacs-lisp
+  (use-package magit
+    :ensure t)
+#+end_src

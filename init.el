@@ -95,7 +95,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(quelpa auctex zenburn-theme auto-complete avy org-bullets which-key use-package try))
+   '(magit quelpa auctex zenburn-theme auto-complete avy org-bullets which-key use-package try))
  '(safe-local-variable-values '((TeX-master . xetex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
